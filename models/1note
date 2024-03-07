@@ -1,0 +1,20 @@
+Models :- Models is a class which is used to keep the schmea of several files.
+
+Basic Stucture for Whatsapp Model
+    Chat will have=>
+
+    (_id,from (string) ,to (string) ,message (string) ,created_at (date) )
+
+
+
+
+
+
+Like for whatsapp We can have an scema for 
+Chat 
+user section
+stories section.
+
+    So this model directory will contain logical schema for all of them.
+
+

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Chat</title>
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Trirong">
+</head>
+
+<body>
+    <div class="n-nav">
+        <h2>Mini WhatsApp</h2>
+        <form method="get" action="/chats/new">
+            <button class="glow-on-hover">New Chat</button>
+        </form>
+    </div>
+    <div class="new-wrapper">
+        <div class="form-container">
+            <h3>Edit Your Chat <%= newchat.from %>
+            </h3>
+            <p>This chat is sent from <b>
+                    <%= newchat.from %>
+                </b> to <b>
+                    <%= newchat.to %>
+                </b>
+            </p>
+
+            <form method="post" action="/chats/<%= newchat.id %>?_method=PUT">
+                <div class="edtxt">
+                    <textarea name="msg" id="" cols="30" rows="10"><%= newchat.msg %></textarea>
+                    <button class="edit">Edit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</body>
+
+</html>

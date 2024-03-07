@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini WhatsApp</title>
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Trirong">
+</head>
+
+<body>
+    <div class="nav">
+        <h2>Mini WhatsApp</h2>
+        <form method="get" action="/chats/new">
+            <button class="glow-on-hover">New Chat</button>
+        </form>
+    </div>
+    <div class="wrapper">
+
+
+        <div class="container">
+            <% for(let chat of chats){ %>
+                <div class="chat">
+                    <p>From : <%= chat.from %>
+                    </p>
+                    <div class="msg">
+                        <p>
+                            Message: <%= chat.msg %>
+                        </p>
+                        <div class="eddel">
+                            <form action="/chats/<%= chat._id %>/edit"><button class="edit">Edit</button></form>
+                            <form method="post" action="/chats/<%= chat._id %>?_method=DELETE"><button class="delete">Delete</button></form>
+                        </div>
+
+                    </div>
+                    <p>Recieved By : <%= chat.to %>
+                    </p>
+                    <!-- for time conver returned value in strin than split on the basis of " " and print time -->
+                    <div class="tandd">
+                        <p>Time : <%= chat.created_at.toString().split(" ")[4] %></p>
+                        <p>Date : <%= chat.created_at.toString().split(" ").slice(1,4).join(" ") %></p>
+                    </div>
+                </div>
+                <% } %>
+        </div>
+
+    </div>
+
+
+</body>
+
+</html>
