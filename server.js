@@ -96,5 +96,5 @@ app.use(methodOverride("_method"))
   })
 
 app.listen(port, () => {
-  console.log(`Listening at http://localhost:${port}/posts`)
+  console.log(`Listening at http://localhost:${port}/chats`)
 });
